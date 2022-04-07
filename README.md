@@ -43,7 +43,7 @@ https://www.notion.so/3-95e793c2c7e745178dd80a27c802dbc1
 
 ## Project Architecture
 
-준비중
+<img src="https://user-images.githubusercontent.com/91252981/162168694-6ea5fd4b-f9c9-4c70-9ff6-8c55398b5dcc.png">
 
 ---
 
