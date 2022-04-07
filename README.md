@@ -57,7 +57,7 @@ https://www.notion.so/3-95e793c2c7e745178dd80a27c802dbc1
 <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=MySQL&logoColor=white">
  <img src="https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=Sequelize&logoColor=white">
 </br>
-<img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JWT&logoColor=white">
+<img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=Json Web Tokens&logoColor=white">
 <img src="https://img.shields.io/badge/AWS Lambda-FF9900?style=for-the-badge&logo=AWS Lambda&logoColor=white">
 <img src="https://img.shields.io/badge/AWS Ec2-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white"> 
 <img src="https://img.shields.io/badge/route53-F7A81B?style=for-the-badge&logo=route53&logoColor=white">
@@ -73,22 +73,25 @@ https://www.notion.so/3-95e793c2c7e745178dd80a27c802dbc1
 <img src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=Slack&logoColor=white"/>
 <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white"/>
 <img src="https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white">
 <br>
 </p>
 
 
 ---
 
-## 주요 라이브러리
+## 라이브러리 | Library
 
-| 라이브러리    | 설명                       | 버전   |
+| Library    | Description                       | Version   |
 | ------------- | -------------------------- | ------ |
-| Express       | Node.js                    | 4.17.1 |
-| MYSQL         | 참조관계가 많은 데이터 특성. MySQL 적용 | 5.13.3 |
-|sequelize      |                        |7.0.0 |
-| CORS          | Request resouRce 제한      | 2.8.5  |
-| dotenv        | 환경변수 설정              | 10.0.0 |
-| request       |                            | 2.88.2 |
+| express       | Node.js 웹 프레임워크                 | 4.17.3 |
+| MySQL         | Database | 8.0.28 |
+| sequelize      | MySQL ORM                      |6.17.0 |
+| cors          | 교차 리소스 공유      | 2.8.5  |
+| dotenv        | 환경변수 설정              | 16.0.0 |
+| jsonwebtoken | 서명 암호화 | 8.5.1|
+| passport | Node.js authentication | 0.5.2|
+| passport-kakao | 카카오 로그인 모듈 | 1.0.1 |
 
 ---
 
@@ -136,3 +139,37 @@ https://www.notion.so/3-95e793c2c7e745178dd80a27c802dbc1
 
 </div>
 </details>
+
+---
+## Installation
+
+1. fork
+```console
+fork
+```
+
+2. clone
+```console
+$ git clone https://github.com/Y-Benefit/Y-Benefit_BE.git
+```
+
+3. 패키지 설치
+```console
+$ cd Y-Benefit_BE
+$ npm install
+```
+
+4. 환경변수 설정
+```text
+// Y-Benefit_BE 폴더 안에 .env 파일 생성 후 아래의 내용을 기입 후 저장해주세요!
+KAKAO_ID = '카카오에서 받은 REST API Key'
+KAKAO_URL = '설정한 Redirect URI'
+TOKENKEY = '사용할 토큰키'
+```
+
+5. MySQL DB 생성
+```console
+npx sequelize init
+npx sequelize db:create
+```
+
