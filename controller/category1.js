@@ -3,7 +3,6 @@ const { fn, col } = Policy.sequelize;
 const { Op } = require('sequelize');
 const { Sequelize, sequelize } = require('../models')
 
-
 const getPolicy = async (req, res) => {
     try {
 
@@ -11,6 +10,7 @@ const getPolicy = async (req, res) => {
             attributes: ['postId', 'category', 'benefit', 'title', [fn('concat', col('apply_start'), ' ~ ', col('apply_end')), "apply_period"], 'view', 'operation'],
             order: [['view', 'DESC']],
         });
+
         const c1 = await Policy.findAll({
             attributes: ['postId', 'category', 'benefit', 'title', [fn('concat', col('apply_start'), ' ~ ', col('apply_end')), "apply_period"], 'view', 'operation'],
             where: { category: '주거·금융' },
@@ -47,7 +47,6 @@ const getPolicy = async (req, res) => {
             order: [['view', 'DESC']],
         });
 
-
         const cZip = {
             c0 : c0,
             c1 : c1,
@@ -61,11 +60,11 @@ const getPolicy = async (req, res) => {
         res.json({ cZip });
 
     } catch(error) {
-        res.status(400).json({ result: 'false' })
-        }
 
+        res.status(400).json({ result: 'false' });
+
+        }
 }
-    
 
 module.exports = {
     getPolicy

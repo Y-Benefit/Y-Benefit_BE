@@ -10,6 +10,4 @@ router.get("/main", controller.mainpage);
 // 상세페이지 
 router.get("/detail/:postId", freeMiddleware, controller.detailpage);
 
-
-
 module.exports = router;

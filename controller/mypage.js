@@ -2,9 +2,9 @@ const { Zzim, Policy, User, Comment, Zzim_folder } = require('../models');
 const { sequelize } = require('../models');
 const { QueryTypes } = require('sequelize');
 
-
 const getZzimList = async (req,res) => {
     try {
+
         const { userId } = res.locals.user;
     
         // const existUser = await User.findOne({ where: { userId }});
@@ -24,18 +24,21 @@ const getZzimList = async (req,res) => {
                 list,
             });
         }
+
     } catch(error) {
+
         console.log(error);
         res.status(201).send({
             ok: false,
             errorMessage: 'Could not fetch zzims',
         });
+
     }
 };
 
-
 const getCommentList = async (req, res) => {
     try {
+
         const { userId } = res.locals.user;
         
         const existComment = await Comment.findAll({
@@ -49,29 +52,20 @@ const getCommentList = async (req, res) => {
             });
         } 
 
-        // let comments = await Policy.findAll({
-        //     attributes: ['postId', 'title', 'benefit'],
-        //     include: [
-        //         {
-        //             model: Comment,
-        //             attributes: ['commentId', 'content', 'createdAt'],
-        //             where: { userId }
-        //         }
-        //     ],
-        //     raw: true,
-        // });
-
         const comments = await sequelize.query(`SELECT p.postId, p.title, p.benefit, c.CommentId as commentId, c.content as content, c.createdAt as createdAt FROM policies as p INNER JOIN Comments as c on p.postId = c.postId where userId = ${userId}`, { type: QueryTypes.SELECT })
 
         res.status(200).send({
             comments,
-        })
+        });
+
     } catch (error) {
+
         console.log(error);
         res.status(201).send({
             ok: false,
             errorMessage: 'Could not fetch comments',
         });
+
     }
 }
 

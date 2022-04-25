@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
 
             Review.belongsTo(models.User, { foreignKey: 'userId', sourceKey: 'userId', onDelete: 'CASCADE' });
             Review.belongsTo(models.Policy, { foreignKey: 'postId', sourceKey: 'postId', onDelete: 'CASCADE' });
-        
+            
         }
     }
     Review.init(

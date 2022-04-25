@@ -2,12 +2,10 @@ const { Zzim } = require('../models');
 const { Zzim_folder } = require('../models');
 const { Op } = require('sequelize');
 
-
 const createZzim = async (req, res) => {
     const { postId } = req.params;
     const { userId } = res.locals.user;
     const { folderId, zzim_status } = req.body;
-
 
     try {
 
@@ -32,14 +30,17 @@ const createZzim = async (req, res) => {
                    ok: false,
                }))
        }
+
     } catch(error){
+
         console.log(error);
         res.status(200).send({
             ok: false,
             errorMessage: 'zzim fail'
-        })
+        });
+
     }
-}
+};
 
 module.exports = {
     createZzim,

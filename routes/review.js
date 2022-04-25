@@ -3,7 +3,6 @@ const router = express.Router();
 const authMiddleware = require('../middleware/auth-middleware');
 const controller = require("../controller/review");
 
-
 // 리뷰등록
 router.post("/detail/:postId/link", authMiddleware, controller.createReview);
 
