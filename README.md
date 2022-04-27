@@ -33,8 +33,8 @@ https://www.notion.so/3-95e793c2c7e745178dd80a27c802dbc1
 - 프론트엔드
   - 명석환 (https://github.com/seokhwanmyeong)
 - 백엔드
-  - 김현지 (https://github.com/hyunjikeem)
   - 우재현 (https://github.com/Ausdauer1)
+  - 김현지 (https://github.com/hyunjikeem)
 - 디자이너
   - 김선화
   - 정지현
